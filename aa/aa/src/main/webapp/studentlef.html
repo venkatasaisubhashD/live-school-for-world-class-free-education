@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clickable Images</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: dimgray;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 5vh; /* Set the container height to 5% of the viewport height */
+      padding: 10px; /* Optional padding */
+      box-sizing: border-box;
+    }
+
+    .image-container a {
+      display: inline-block;
+      margin: 1vw; /* Adjust margin as needed */
+    }
+
+    .image-container img {
+      max-width: 100%; /* Ensure the image resizes according to its container */
+      max-height: 100%; /* Ensure the image resizes according to its container */
+      width: auto;
+      height: auto;
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-container">
+  <a href="page1.html" target="rightFrame">
+    <img src="image1.png" alt="Image 1">
+  </a>
+  <a href="page2.html" target="rightFrame">
+    <img src="image2.png" alt="Image 2">
+  </a>
+  <a href="page3.html" target="rightFrame">
+    <img src="image3.png" alt="Image 3">
+  </a>
+  <a href="page4.html" target="rightFrame">
+    <img src="image43.png" alt="Image 4">
+  </a>
+</div>
+
+</body>
+</html>

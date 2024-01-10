@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login/Signup Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('bcg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 80%;
+      text-align: left;
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .signup-row {
+      width: 48%;
+      margin-bottom: 10px;
+    }
+
+    label {
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select,
+    textarea {
+      width: calc(100% - 10px);
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    .form-container.active {
+      display: block;
+    }
+
+    .form-container h2 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container active" id="loginForm">
+    <h2>Login</h2>
+    <form action="logii" method="post">
+      <div class="login-row">
+        <label for="usernameLogin">Username:</label>
+        <input type="text" id="usernameLogin" name="usernameLogin" required>
+      </div>
+      <div class="login-row">
+        <label for="passwordLogin">Password:</label>
+        <input type="password" id="passwordLogin" name="passwordLogin" required>
+      </div>
+      <div class="login-row">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+  
+  <div class="form-container" id="signupForm">
+    <h2>Sign Upp</h2>
+    <form action="signup" method="post">
+      <div class="signup-row">
+        <label for="usernameSignup">Username:</label>
+        <input type="text" id="usernameSignup" name="usernameSignup" required>
+      </div>
+      <div class="signup-row">
+        <label for="passwordSignup">Password:</label>
+        <input type="password" id="passwordSignup" name="passwordSignup" required>
+      </div>
+      <div class="signup-row">
+        <div>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" name="phone" required>
+        </div>
+      </div>
+      <div class="signup-row">
+        <div>
+          <label for="age">Age:</label>
+          <input type="text" id="age" name="age" required>
+        </div>
+        <div>
+          <label for="college">college:</label>
+          <input type="text" id="college" name="college" required>
+        </div>
+      </div>
+      <div class="signup-row">
+        <div>
+          <label for="secQuestion">Security Question:</label>
+          <input type="text" id="secQuestion" name="secQuestion" required>
+        </div>
+        <div>
+          <label for="secAnswer">Security Question Answer:</label>
+          <input type="text" id="secAnswer" name="secAnswer" required>
+        </div>
+      </div>
+      <div class="signup-row">
+        <div>
+          <label for="userType">Select user type:</label>
+          <select id="userType" name="userType" onchange="showSubjectField()">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+        <div id="subjectField" style="display: none;">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject">
+        </div>
+      </div>
+      <div class="signup-row">
+        <label for="qualifications">Qualifications:</label>
+        <textarea id="qualifications" name="qualifications" rows="4" cols="40" required></textarea>
+      </div>
+      <div class="signup-row">
+        <input type="submit" value="Sign Up">
+      </div>
+    </form>
+  </div>
+
+  <div class="but">
+    <button onclick="showForm('login')">Log In</button>
+    <button onclick="showForm('signup')">Sign Up</button>
+  </div>
+
+  <script>
+    function showSubjectField() {
+      const userType = document.getElementById('userType').value;
+      const subjectField = document.getElementById('subjectField');
+    
+      if (userType === 'teacher') {
+        subjectField.style.display = 'block';
+      } else {
+        subjectField.style.display = 'none';
+      }
+    }
+  
+    function showForm(formType) {
+      const loginForm = document.getElementById('loginForm');
+      const signupForm = document.getElementById('signupForm');
+  
+      if (formType === 'login') {
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+      } else if (formType === 'signup') {
+        signupForm.classList.add('active');
+        loginForm.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>

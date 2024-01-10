@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clickable Images</title>
+  <style>
+    /* CSS for making images responsive within the iframe */
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 5vh; /* Set the container height to 5% of the viewport height */
+      padding: 10px; /* Optional padding */
+      box-sizing: border-box;
+      flex-wrap: wrap; /* Allow images to wrap if they exceed the width */
+    }
+
+    .image-container a {
+      display: inline-block;
+      margin: 5px; /* Adjust margin as needed */
+      max-width: 2%; /* Adjust the maximum width of each image container */
+      max-height: 2%; /* Adjust the maximum height of each image container */
+      box-sizing: border-box; /* Include padding and border in the width */
+    }
+
+    .image-container img {
+      width: 100%; /* Set the width of the images to fill their containers */
+      height: auto; /* Allow the height to adjust proportionally */
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-container">
+  <a href="page1.html" target="rightFrame">
+    <img src="image1.png" alt="Image 1">
+  </a>
+  <a href="page2.html" target="rightFrame">
+    <img src="image2.png" alt="Image 2">
+  </a>
+  <a href="DisplayHomeworkServlet" target="rightFrame">
+    <img src="image2.png" alt="Image 3">
+  </a>
+  <a href="page4.html" target="rightFrame">
+    <img src="image4.png" alt="Image 4">
+  </a>
+</div>
+
+</body>
+</html>

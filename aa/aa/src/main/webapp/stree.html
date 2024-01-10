@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>EchoMfeet</title>
+
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+  </style>
+  <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+  <script>
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+      const teacherName = params.get('teacherName');
+      const roomIdElement = document.getElementById('roomId');
+
+      if (teacherName && roomIdElement) {
+        roomIdElement.innerText = teacherName;
+        window.roomID = teacherName;
+
+        const userID = Math.floor(Math.random() * 10000) + "";
+        const userName = "I'm Ba🦇";
+        const appID = 1276202388;
+        const serverSecret = "e1965162b4785b92a134ba7bb38ba03c";
+        
+        const TOKEN = ZegoUIKitPrebuilt.generateKitTokenForTest(
+          appID,
+          serverSecret,
+          window.roomID,
+          userID,
+          userName
+        );
+
+        const zp = ZegoUIKitPrebuilt.create(TOKEN);
+        zp.joinRoom({
+          container: document.querySelector("#root"),
+          sharedLinks: [
+            {
+              url:
+                window.location.origin +
+                window.location.pathname +
+                "?roomID=" +
+                window.roomID,
+            },
+          ],
+          scenario: {
+            mode: ZegoUIKitPrebuilt.VideoConference,
+          },
+        });
+      } else {
+        console.error('Teacher name not found in URL parameters or roomId element does not exist.');
+      }
+    };
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+</html>

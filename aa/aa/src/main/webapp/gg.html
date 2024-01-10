@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Global School</title>
+  <style>
+    /* Basic styles for layout */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    .login-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    .scroll-down {
+      text-align: center;
+      margin-top: 50vh; /* Starts at the middle of the viewport */
+    }
+    .scroll-down a {
+      font-size: 36px;
+      text-decoration: none;
+      color: #000;
+    }
+    .page-cover {
+      height: 100vh; /* Full viewport height */
+      background-image: url(cover.jpg);
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .arrow-down {
+      font-size: 50px;
+      margin-top: 20px;
+    }
+    main {
+      padding: 20px;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .feature video,
+    .feature img {
+      width: 50%;
+      margin-right: 20px;
+    }
+    .feature .text {
+      width: 50%;
+    }
+    .hover-text {
+      display: none;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1;
+    }
+    .hover-img:hover .hover-text {
+      display: block;
+    }
+    /* Define your own CSS styles for other sections, images, videos, text, etc. */
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Online Global School</h1>
+    <!-- Login button at top right -->
+    <div class="login-btn">
+      <button>Login</button>
+    </div>
+  </header>
+
+  <div class="page-cover">
+    <!-- Scroll-down indicator using Unicode arrow -->
+    <div class="scroll-down">
+      <a href="#content">&#9660;</a>
+      <p>Global Online School</p>
+    </div>
+    <div class="arrow-down">&#9660;</div>
+  </div>
+
+  <main id="content">
+    <section class="hero">
+      <!-- First video -->
+      <div class="feature">
+        <video class="video" autoplay loop muted>
+          <source src="vid1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="text">
+          <h2>Welcome to Online Global School</h2>
+          <p>Join our diverse community of learners from around the world. Explore various courses, engage with top educators, and excel in your education journey.</p>
+        </div>
+      </div>
+
+      <!-- Image hover -->
+      <div class="hover-img">
+        <img src="path/to/image1.jpg" alt="Image 1">
+        <div class="hover-text">
+          <p>This paragraph relates to education and the global online school.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="courses">
+      <!-- Second video -->
+      <div class="feature">
+        <video class="video" autoplay loop muted>
+          <source src="vid2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="text">
+          <h2>Discover Our Educational Approach</h2>
+          <p>Explore our innovative teaching methods and exceptional learning resources designed to maximize your potential.</p>
+        </div>
+      </div>
+
+      <!-- Image hover -->
+      <div class="hover-img">
+        <img src="path/to/image2.jpg" alt="Image 2">
+        <div class="hover-text">
+          <p>This paragraph relates to education and the global online school.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Add more sections like these for additional videos or images -->
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Online Global School. All rights reserved.</p>
+    <!-- Footer content -->
+  </footer>
+</body>
+</html>

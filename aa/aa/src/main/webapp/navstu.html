@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Clickable Images</title>
+  <style>
+    /* CSS for making images responsive within the iframe */
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: black;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 90vh; /* Set the container height to 90% of the viewport height */
+      padding: 1px; /* Optional padding */
+      box-sizing: border-box;
+      flex-wrap: wrap; /* Allow images to wrap if they exceed the width */
+      gap: 50px; /* Increase gap between images */
+      margin-bottom: 500px; /* Push content up */
+    }
+
+    .image-container a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 2%; /* Adjust the maximum width of each image container */
+      max-height: 2%; /* Adjust the maximum height of each image container */
+      box-sizing: border-box; /* Include padding and border in the width */
+      text-decoration: none; /* Remove default underline */
+      text-align: center;
+      color: white; /* Set text color to white */
+      font-size: 10px; /* Reduce text size */
+    }
+
+    .image-container img {
+      width: 100%; /* Set the width of the images to fill their containers */
+      height: auto; /* Allow the height to adjust proportionally */
+      cursor: pointer;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      background-color: white;
+      margin-bottom: 5px; /* Adjust margin between image and text */
+    }
+
+    button {
+      background-color: white;
+      color: black;
+      border: none;
+      border-radius: 5px;
+      padding: 3px 5px;
+      font-size: 12px;
+      display: inline-block;
+      margin-right: 30px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="image-container">
+  <button onclick="history.back();">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14.7 7.29L13.29 5.88L6.7 12.47L13.29 19.07L14.7 17.66L9.41 12.36L14.7 7.29Z" fill="currentColor"/>
+    </svg>
+    Back
+  </button>
+  <a href="page1.html" target="rightFrame">
+    <img src="image1.png" alt="Image 1">
+    <div>SEARCH</div>
+  </a>
+  <a href="dis" target="rightFrame">
+    <img src="image2.png" alt="Image 2">
+    <div>DIRECTORY</div>
+  </a>
+  <a href="DisplayHomeworkServlet" target="rightFrame">
+    <img src="image3.png" alt="Image 3">
+    <div>HOMEWORK</div>
+  </a>
+   <a href="DisplayNotificationsServlet" target="rightFrame">
+    <img src="image4.png" alt="Image 3">
+    <div>NOTIFICATION</div>
+  </a>
+  <a href="ddss" target="rightFrame">
+    <img src="image4.png" alt="Image 3">
+    <div>delete</div>
+  </a>
+</div>
+
+</body>
+</html>

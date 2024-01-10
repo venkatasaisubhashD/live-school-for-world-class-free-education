@@ -1,0 +1,31 @@
+import java.io.IOException;
+import java.io.PrintWriter;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@WebServlet("/cx")
+public class cx extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String filePath = request.getParameter("filepath");
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+
+        out.println("<html><head><title>File Path</title></head><body>");
+
+        if (filePath != null && !filePath.isEmpty()) {
+            out.println("<h2>File Path:</h2>");
+            out.println("<p>" + filePath + "</p>");
+        } else {
+            out.println("<p>No file path provided.</p>");
+        }
+
+        out.println("</body></html>");
+        out.close();
+    }
+}
